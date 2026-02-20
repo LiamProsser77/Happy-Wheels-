@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Class Project</title>
+    <style>
+        body { font-family: sans-serif; background: #111; color: white; text-align: center; margin: 0; padding: 10px; overflow: hidden; height: 100vh; }
+        .btn-container { margin-bottom: 10px; }
+        button { padding: 10px 20px; margin: 5px; cursor: pointer; border: none; border-radius: 5px; font-weight: bold; background: #444; color: white; }
+        button:hover { background: #666; }
+        iframe { width: 100%; height: calc(100vh - 70px); border: none; background: #000; }
+    </style>
+</head>
+<body>
+    <div class="btn-container">
+        <button onclick="loadGame('https://totaljerkface.com')">Method 1 (Official)</button>
+        <button onclick="loadCloaked()">Method 2 (Cloaked)</button>
+        <button onclick="loadGame('https://translate.google.com/translate?sl=en&tl=es&u=https://totaljerkface.com')">Method 3 (Google Bridge)</button>
+    </div>
+    <iframe id="gameFrame" src="about:blank"></iframe>
+    <script>
+        var frame = document.getElementById('gameFrame');
+        function loadGame(url) { frame.src = url; }
+        function loadCloaked() { frame.src = atob("aHR0cHM6Ly90b3RhbGplcmtmeWNlLmNvbS9oYXBweV93aGVlbHMudGpm"); }
+    </script>
+</body>
+</html>
