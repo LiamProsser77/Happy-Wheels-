@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Class Project</title>
+    <title>Science Lab Project</title>
     <style>
-        body { font-family: sans-serif; background: #111; color: white; text-align: center; margin: 0; padding: 10px; overflow: hidden; height: 100vh; }
-        .btn-container { margin-bottom: 10px; }
-        button { padding: 10px 20px; margin: 5px; cursor: pointer; border: none; border-radius: 5px; font-weight: bold; background: #444; color: white; }
-        button:hover { background: #666; }
-        iframe { width: 100%; height: calc(100vh - 70px); border: none; background: #000; }
+        body { font-family: sans-serif; background: #111; color: white; text-align: center; padding: 50px; }
+        .box { border: 2px dashed #444; padding: 30px; border-radius: 15px; display: inline-block; }
+        button { padding: 15px 30px; font-size: 18px; font-weight: bold; cursor: pointer; border: none; border-radius: 8px; color: white; margin: 10px; }
+        .btn-official { background: #e74c3c; } /* Red */
+        .btn-proxy { background: #2ecc71; }    /* Green */
+        button:hover { opacity: 0.8; }
     </style>
 </head>
 <body>
-    <div class="btn-container">
-        <button onclick="loadGame('https://totaljerkface.com')">Method 1 (Official)</button>
-        <button onclick="loadCloaked()">Method 2 (Cloaked)</button>
-        <button onclick="loadGame('https://translate.google.com/translate?sl=en&tl=es&u=https://totaljerkface.com')">Method 3 (Google Bridge)</button>
+    <div class="box">
+        <h1>Project Launcher</h1>
+        <p>If Method 1 is blocked, use Method 2 (Proxy).</p>
+        <!-- Opens the official site in a fresh tab to avoid the Refuse error -->
+        <button class="btn-official" onclick="window.open('https://totaljerkface.com', '_blank')">Method 1: Launch Official</button>
+        <br>
+        <!-- Opens the Google Bridge in a fresh tab -->
+        <button class="btn-proxy" onclick="window.open('https://totaljerkface-com.translate.goog', '_blank')">Method 2: Launch Proxy</button>
     </div>
-    <iframe id="gameFrame" src="about:blank"></iframe>
-    <script>
-        var frame = document.getElementById('gameFrame');
-        function loadGame(url) { frame.src = url; }
-        function loadCloaked() { frame.src = atob("aHR0cHM6Ly90b3RhbGplcmtmeWNlLmNvbS9oYXBweV93aGVlbHMudGpm"); }
-    </script>
 </body>
 </html>
